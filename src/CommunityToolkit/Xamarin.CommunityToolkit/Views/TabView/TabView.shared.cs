@@ -6,6 +6,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Xamarin.CommunityToolkit.Effects;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -808,6 +809,9 @@ namespace Xamarin.CommunityToolkit.UI.Views
 				else
 					UpdateTabIndicatorPosition(position);
 
+				if (oldposition != newPosition)
+					await TabSelectionChanging();
+
 				if (contentIndex >= 0)
 					contentContainer.Position = contentIndex;
 
@@ -815,6 +819,7 @@ namespace Xamarin.CommunityToolkit.UI.Views
 					await tabStripContainerScroll.ScrollToAsync(tabStripContent.Children[tabStripIndex], ScrollToPosition.MakeVisible, false);
 
 				SelectedIndex = position;
+
 				if (oldposition != SelectedIndex)
 				{
 					var selectionChangedArgs = new TabSelectionChangedEventArgs()
@@ -1098,5 +1103,7 @@ namespace Xamarin.CommunityToolkit.UI.Views
 			var handler = Scrolled;
 			handler?.Invoke(this, e);
 		}
+
+		protected virtual Task TabSelectionChanging() => Task.FromResult(true);
 	}
 }
