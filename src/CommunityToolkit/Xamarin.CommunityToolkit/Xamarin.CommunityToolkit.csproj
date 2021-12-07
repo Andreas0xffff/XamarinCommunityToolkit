@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="MSBuild.Sdk.Extras/2.1.2">
+<Project Sdk="MSBuild.Sdk.Extras/3.0.38">
   <PropertyGroup>
     <TargetFrameworks>netstandard1.0;netstandard2.0;netstandard2.1;Xamarin.iOS10;MonoAndroid10.0;Xamarin.TVOS10;Xamarin.WatchOS10;Xamarin.Mac20;tizen40</TargetFrameworks>
     <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">$(TargetFrameworks);uap10.0.19041;netcoreapp3.1;net472;net471</TargetFrameworks>
@@ -81,23 +81,16 @@
     <PackageReference Include="System.ComponentModel" Version="4.3.0" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <PackageReference Update="NETStandard.Library" PrivateAssets="all" />
-    <Compile Include="**\*.netstandard.cs" />
-    <Compile Include="**\*.netstandard.*.cs" />
   </ItemGroup>
   <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard2.0')) ">
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
     <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.7.0" />
-    <Compile Include="**\*.netstandard.cs" />
-    <Compile Include="**\*.netstandard.*.cs" />
   </ItemGroup>
   <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard2.1')) ">
-    <Compile Include="**\*.netstandard.cs" />
-    <Compile Include="**\*.netstandard.*.cs" />
   </ItemGroup>
   <ItemGroup Condition=" $(TargetFramework.StartsWith('uap10.0')) ">
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
     <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.7.0" />
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.10" />
     <Compile Include="**\*.uwp.cs" />
     <Compile Include="**\*.uwp.*.cs" />
     <!--
