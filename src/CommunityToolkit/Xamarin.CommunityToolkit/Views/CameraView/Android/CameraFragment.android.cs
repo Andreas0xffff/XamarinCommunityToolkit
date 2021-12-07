@@ -799,6 +799,7 @@ namespace Xamarin.CommunityToolkit.UI.Views
 		{
 		}
 
+#pragma warning disable CS0618 // Type or member is obsolete
 		async Task RequestCameraPermissions()
 		{
 			if (permissionsRequested != null)
@@ -823,6 +824,7 @@ namespace Xamarin.CommunityToolkit.UI.Views
 			}
 		}
 
+		[System.Obsolete]
 		public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
 		{
 			if (requestCode != 1)
@@ -849,6 +851,7 @@ namespace Xamarin.CommunityToolkit.UI.Views
 			}
 			permissionsRequested?.TrySetResult(true);
 		}
+#pragma warning restore CS0618 // Type or member is obsolete
 
 		void LogError(string desc, Java.Lang.Exception? ex = null)
 		{

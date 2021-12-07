@@ -19,7 +19,7 @@ namespace Xamarin.CommunityToolkit.UI.Views
 		AVCaptureStillImageOutput? imageOutput;
 		AVCapturePhotoOutput? photoOutput;
 		AVCaptureMovieFileOutput? videoOutput;
-		AVCaptureConnection? captureConnection;
+		/*AVCaptureConnection? captureConnection;*/
 		AVCaptureDevice? device;
 		AVCaptureDevicePosition? lastPosition;
 		bool isBusy;
@@ -283,7 +283,6 @@ namespace Xamarin.CommunityToolkit.UI.Views
 
 		AVCaptureFlashMode GetFlashMode()
 		{
-
 			// Note: torch is set elsewhere
 			switch (flashMode)
 			{
