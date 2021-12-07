@@ -9,7 +9,7 @@ using Xamarin.Forms.Platform.UWP;
 
 namespace Xamarin.CommunityToolkit.UI.Views
 {
-	partial class SnackBar
+	public partial class SnackBar
 	{
 		DispatcherTimer? snackBarTimer;
 

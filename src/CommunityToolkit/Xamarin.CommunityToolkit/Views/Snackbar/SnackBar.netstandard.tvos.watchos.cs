@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace Xamarin.CommunityToolkit.UI.Views
 {
-	internal partial class SnackBar
+	public partial class SnackBar
 	{
 		internal partial ValueTask Show(VisualElement sender, SnackBarOptions arguments) => throw new PlatformNotSupportedException();
 	}

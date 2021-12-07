@@ -1,7 +1,6 @@
 using System;
 using System.Threading.Tasks;
 using Xamarin.CommunityToolkit.UI.Views.Helpers;
-using Xamarin.CommunityToolkit.UI.Views.Helpers;
 using Xamarin.CommunityToolkit.UI.Views.Options;
 using Xamarin.CommunityToolkit.Views.Snackbar.Helpers;
 using Xamarin.Forms;
@@ -15,7 +14,7 @@ using Xamarin.Forms.Platform.MacOS;
 
 namespace Xamarin.CommunityToolkit.UI.Views
 {
-	partial class SnackBar
+	public partial class SnackBar
 	{
 		internal partial ValueTask Show(VisualElement sender, SnackBarOptions arguments)
 		{

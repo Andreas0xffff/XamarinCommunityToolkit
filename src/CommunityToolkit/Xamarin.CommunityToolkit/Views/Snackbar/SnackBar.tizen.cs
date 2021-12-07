@@ -6,7 +6,7 @@ using EButton = ElmSharp.Button;
 
 namespace Xamarin.CommunityToolkit.UI.Views
 {
-	internal partial class SnackBar
+	public partial class SnackBar
 	{
 		internal partial ValueTask Show(Forms.VisualElement sender, SnackBarOptions arguments)
 		{
