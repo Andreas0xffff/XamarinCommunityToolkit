@@ -14,6 +14,8 @@ namespace Xamarin.CommunityToolkit.Effects
 
 		public const string HoveredVisualState = "Hovered";
 
+		public static Color DefaultNativeAnimationColorIOS = Color.Default;
+
 		public event EventHandler<TouchStatusChangedEventArgs> StatusChanged
 		{
 			add => weakEventManager.AddEventHandler(value);

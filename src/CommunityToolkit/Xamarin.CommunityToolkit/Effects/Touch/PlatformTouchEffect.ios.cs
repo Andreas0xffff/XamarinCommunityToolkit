@@ -239,7 +239,7 @@ namespace Xamarin.CommunityToolkit.iOS.Effects
 			if (control?.GetRenderer() is not UIView renderer)
 				return;
 
-			var color = effect.NativeAnimationColor;
+			var color = effect.NativeAnimationColor != Color.Default ? effect.NativeAnimationColor : TouchEffect.DefaultNativeAnimationColorIOS;
 			var radius = effect.NativeAnimationRadius;
 			var shadowRadius = effect.NativeAnimationShadowRadius;
 			var isStarted = status == TouchStatus.Started;
