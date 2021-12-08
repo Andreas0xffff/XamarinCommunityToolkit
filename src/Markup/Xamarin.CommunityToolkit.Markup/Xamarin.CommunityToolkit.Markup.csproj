@@ -28,6 +28,7 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance> 
     <PackageTags>xamarin,xamarin.forms,toolkit,kit,communitytoolkit,xamarincommunitytoolkit,markup,csharpformarkup,csharp,csharpmarkup</PackageTags>
     <Configurations>Debug;Release</Configurations>
+	<NoWarn>NU1701;CS0419;CS1570;CS1572;CS1573;CS1574;CS1587;CS1591;CS1723;CS1734</NoWarn>
   </PropertyGroup>
   <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard1.0')) ">
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
