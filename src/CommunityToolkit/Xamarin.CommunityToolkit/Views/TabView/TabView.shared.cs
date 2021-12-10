@@ -584,29 +584,26 @@ namespace Xamarin.CommunityToolkit.UI.Views
 
 		void AddSelectionTapRecognizer(View view)
 		{
-			var tapRecognizer = new TapGestureRecognizer();
-
-			tapRecognizer.Tapped += (object? sender, EventArgs args) =>
-			{
-				if (sender is not View view)
-					return;
-
-				var capturedIndex = tabStripContent.Children.IndexOf(view);
-
-				if (view is TabViewItem tabViewItem)
+			TouchEffect.SetNativeAnimation(view, true);
+			if (Device.RuntimePlatform == Device.iOS)
+				TouchEffect.SetNativeAnimationColor(view, Color.FromRgba(128, 128, 128, 64));
+			TouchEffect.SetCommandParameter(view, view);
+			TouchEffect.SetCommand(view, new Command<View>((tappedView) =>
 				{
-					var tabTappedEventArgs = new TabTappedEventArgs(capturedIndex);
-					tabViewItem.OnTabTapped(tabTappedEventArgs);
-				}
+					var capturedIndex = tabStripContent.Children.IndexOf(tappedView);
 
-				if (CanUpdateSelectedIndex(capturedIndex))
-				{
-					if (SelectedIndex != capturedIndex)
-						UpdateSelectedIndex(capturedIndex);
-				}
-			};
+					if (tappedView is TabViewItem tabViewItem)
+					{
+						var tabTappedEventArgs = new TabTappedEventArgs(capturedIndex);
+						tabViewItem.OnTabTapped(tabTappedEventArgs);
+					}
 
-			view.GestureRecognizers.Add(tapRecognizer);
+					if (CanUpdateSelectedIndex(capturedIndex))
+					{
+						if (SelectedIndex != capturedIndex)
+							UpdateSelectedIndex(capturedIndex);
+					}
+				}));
 		}
 
 		void AddTabViewItemToTabStrip(View item, int index = -1)
