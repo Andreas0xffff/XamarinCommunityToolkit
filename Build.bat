@@ -14,3 +14,6 @@ REM dotnet test src/CommunityToolkit/Xamarin.CommunityToolkit.UnitTests/Xamarin.
 
 copy .\src\CommunityToolkit\Xamarin.CommunityToolkit\nuget\Xamarin.CommunityToolkit.*.nupkg .\nuget\
 copy .\src\Markup\Xamarin.CommunityToolkit.Markup\nuget\Xamarin.CommunityToolkit.Markup.*.nupkg .\nuget\
+
+rd /s /q "%USERPROFILE%\.nuget\packages\xamarin.communitytoolkit"
+rd /s /q "%USERPROFILE%\.nuget\packages\xamarin.communitytoolkit.markup"
