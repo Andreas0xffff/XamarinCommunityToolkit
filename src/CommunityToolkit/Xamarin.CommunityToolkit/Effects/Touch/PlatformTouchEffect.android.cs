@@ -122,7 +122,7 @@ namespace Xamarin.CommunityToolkit.Android.Effects
 					accessibilityListener = null;
 				}
 
-				if (View != null)
+				if (View.IsAlive())
 				{
 					View.LayoutChange -= OnLayoutChange;
 					View.Touch -= OnTouch;
